@@ -1,0 +1,66 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "steam-shortcuts-editor"
+version = "1.0.0"
+description = "A GUI application to view and edit Steam shortcuts (non-Steam games)"
+readme = "README.md"
+requires-python = ">=3.6"
+license = {text = "MIT"}
+authors = [
+    {name = "Steam Shortcuts Editor Contributors"}
+]
+keywords = ["steam", "shortcuts", "vdf", "gui", "editor"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: End Users/Desktop",
+    "Topic :: Games/Entertainment",
+    "Topic :: Utilities",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: MacOS",
+]
+
+dependencies = [
+    "PySide6>=6.0.0",
+    "vdf>=3.4",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pyinstaller>=5.0",
+    "black",
+    "flake8",
+    "mypy",
+]
+
+[project.scripts]
+steam-shortcuts-editor = "steam_shortcuts_editor:main"
+
+[project.urls]
+Homepage = "https://github.com/yourusername/steam-shortcuts-editor"
+Issues = "https://github.com/yourusername/steam-shortcuts-editor/issues"
+
+[tool.setuptools]
+py-modules = ["steam_shortcuts_editor"]
+
+[tool.black]
+line-length = 100
+target-version = ['py36', 'py37', 'py38', 'py39', 'py310', 'py311', 'py312']
+
+[tool.mypy]
+python_version = "3.6"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
